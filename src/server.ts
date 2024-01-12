@@ -2,9 +2,10 @@ import cors from "@fastify/cors";
 import fastify from "fastify";
 import { ZodError } from "zod";
 import { appRoutes } from "./routes";
+import { env } from "./env";
 
 const app = fastify();
-const port = 3333;
+const port = env.PORT;
 
 app.register(appRoutes);
 app.register(cors);
