@@ -7,9 +7,10 @@
     "node": ">=18"
   },
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "prisma generate --schema=./prisma/schema.dev.prisma && tsx watch src/server.ts",
     "lint": "eslint src --ext .ts --fix",
-    "build": "tsup src --out-dir build"
+    "build": "tsup src --out-dir build",
+    "prisma:reset": "prisma migrate reset --schema=./prisma/schema.dev.prisma"
   },
   "keywords": [],
   "author": "",
